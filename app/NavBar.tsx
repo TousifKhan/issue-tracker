@@ -22,7 +22,7 @@ const NavBar = () => {
             { links.map (link => 
                 <li>
                     <Link 
-                        key={link.href}
+                        key={link.label}
                         className={classnames({
                             'text-zinc-900': link.href === currentPath,
                             'text-zinc-500': link.href !== currentPath,
