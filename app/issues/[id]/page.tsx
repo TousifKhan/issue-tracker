@@ -25,7 +25,7 @@ const IssueDetailPage = async ({ params }: Props) => {
             <Text>{issue.createdAt.toDateString()}</Text>
         </Flex>
         <Card className='mt-5'>
-            <ReactMarkdown className='prose-slate'>{issue.description}</ReactMarkdown>
+            <ReactMarkdown className='prose'>{issue.description}</ReactMarkdown>
         </Card>
     </div>
   )
