@@ -9,7 +9,7 @@ import IssueActions from './IssueActions'
 const IssuePage = async () => {
   const issues = await prisma.issue.findMany();
 
-  await delay(1000); //2 sec
+  await delay(500); //half second delay
 
   return (
     <div>
@@ -25,7 +25,7 @@ const IssuePage = async () => {
         <Table.Body>
           {issues.map(issue => (
             <Table.Row key={issue.id}>
-              <Table.Cell>{issue.title}</Table.Cell>
+              <Table.Cell><Link href={`/issues/${issue.id}`}>{issue.title}</Link></Table.Cell>
               <Table.Cell><IssueStatusBadge status={issue.status} /></Table.Cell>
               <Table.Cell>{issue.createdAt.toDateString()}</Table.Cell>
             </Table.Row>
