@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-import SimpleMDE from 'react-simplemde-editor'
+import SimpleMDE from "react-simplemde-editor";
 
 type IssueFormData = z.infer<typeof issueSchema>;
 
@@ -36,7 +36,7 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
       if (issue) await axios.patch("/api/issues/" + issue.id, data);
       else await axios.post("/api/issues", data);
       router.push("/issues");
-      router.refresh()
+      router.refresh();
     } catch (error) {
       setSubmit(false);
       setError("An unexpected error occurred.");
